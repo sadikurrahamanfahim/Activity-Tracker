@@ -30,3 +30,4 @@ D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Debug\net8.0\System.R
 D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Debug\net8.0\Websocket.Client.dll
 D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity Tracker.csproj.AssemblyReference.cache
 D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity.46503159.Up2Date
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity Tracker.sourcelink.json

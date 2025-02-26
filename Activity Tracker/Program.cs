@@ -4,6 +4,7 @@ using Supabase;
 using System.Threading.Tasks;
 using Postgrest.Models;
 using Postgrest.Attributes;
+using Websocket.Client.Logging;
 
 public class ActivityStatus : BaseModel
 {
@@ -58,11 +59,17 @@ class Program
                 UserId = userId
             };
 
-            await supabase.From<ActivityStatus>().Upsert(status);
+            Console.WriteLine($"Attempting to upsert status: IsActive={status.IsActive}, LastActive={status.LastActive}, UserId={status.UserId}");
+            var response = await supabase.From<ActivityStatus>().Upsert(status);
+            Console.WriteLine("Status updated successfully. Response: " + (response != null ? response.ToString() : "Null response"));
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error updating status: {ex.Message}");
+            Console.WriteLine($"Error updating status: {ex.Message} - {ex.StackTrace}");
+            if (ex.InnerException != null)
+            {
+                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+            }
         }
     }
 
@@ -77,11 +84,17 @@ class Program
                 UserId = userId
             };
 
-            await supabase.From<ActivityStatus>().Upsert(status);
+            Console.WriteLine($"Attempting to update last active time: IsActive={status.IsActive}, LastActive={status.LastActive}, UserId={status.UserId}");
+            var response = await supabase.From<ActivityStatus>().Upsert(status);
+            Console.WriteLine("Last active time updated successfully. Response: " + (response != null ? response.ToString() : "Null response"));
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error updating time: {ex.Message}");
+            Console.WriteLine($"Error updating time: {ex.Message} - {ex.StackTrace}");
+            if (ex.InnerException != null)
+            {
+                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+            }
         }
     }
 
@@ -93,21 +106,21 @@ class Program
                 .Where(x => x.UserId == userId)
                 .Single();
 
+            Console.Clear();
+            Console.WriteLine("Activity Status:");
             if (response != null)
             {
-                Console.Clear();
-                Console.WriteLine("Activity Status:");
                 Console.WriteLine($"IsActive: {response.IsActive}");
                 Console.WriteLine($"LastActive: {response.LastActive}");
             }
             else
             {
-                Console.WriteLine("No status found");
+                Console.WriteLine("No status found for user: {userId}");
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error displaying status: {ex.Message}");
+            Console.WriteLine($"Error displaying status: {ex.Message} - {ex.StackTrace}");
         }
     }
 
