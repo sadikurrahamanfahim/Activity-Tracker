@@ -2,24 +2,10 @@
 using System.Threading;
 using Supabase;
 using System.Threading.Tasks;
-using Postgrest.Models;
 using Postgrest.Attributes;
 using Websocket.Client.Logging;
+using Activity_Tracker;
 
-public class ActivityStatus : BaseModel
-{
-    [PrimaryKey("id", false)]
-    public long Id { get; set; }
-
-    [Column("is_active")]
-    public bool IsActive { get; set; }
-
-    [Column("last_active")]
-    public DateTime LastActive { get; set; }
-
-    [Column("user_id")]
-    public string UserId { get; set; }
-}
 
 class Program
 {
@@ -31,20 +17,42 @@ class Program
 
     static async Task Main(string[] args)
     {
-        await supabase.InitializeAsync();
-
-        AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
-
-        Console.WriteLine("Activity Tracker Started");
-        Console.WriteLine("Press Ctrl+C to exit");
-
-        await UpdateStatusAsync(true);
-
-        while (isRunning)
+        try
         {
-            await UpdateLastActiveTimeAsync();
-            await DisplayCurrentStatusAsync();
-            Thread.Sleep(60000);
+            // Attempt to initialize the Supabase client
+            Console.WriteLine("Initializing Supabase client...");
+            await supabase.InitializeAsync();
+            Console.WriteLine("Supabase client initialized successfully.");
+
+            // Test the connection with a simple query (e.g., count rows in activity_status)
+            var count = await supabase.From<ActivityStatus>().Count();
+
+
+            Console.WriteLine($"Connection test successful. Found {count} records in activity_status table.");
+
+            // If initialization and test succeed, proceed with the application
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
+
+            Console.WriteLine("Activity Tracker Started");
+            Console.WriteLine("Press Ctrl+C to exit");
+
+            await UpdateStatusAsync(true);
+
+            while (isRunning)
+            {
+                await UpdateLastActiveTimeAsync();
+                await DisplayCurrentStatusAsync();
+                Thread.Sleep(60000);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to connect to Supabase: {ex.Message} - {ex.StackTrace}");
+            if (ex.InnerException != null)
+            {
+                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+            }
+            return; // Exit if connection fails
         }
     }
 
