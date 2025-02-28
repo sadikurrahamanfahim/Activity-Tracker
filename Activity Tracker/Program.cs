@@ -24,13 +24,6 @@ class Program
             await supabase.InitializeAsync();
             Console.WriteLine("Supabase client initialized successfully.");
 
-            // Test the connection with a simple query (e.g., count rows in activity_status)
-            var count = await supabase.From<ActivityStatus>().Count();
-
-
-            Console.WriteLine($"Connection test successful. Found {count} records in activity_status table.");
-
-            // If initialization and test succeed, proceed with the application
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
 
             Console.WriteLine("Activity Tracker Started");

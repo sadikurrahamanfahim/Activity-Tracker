@@ -3,6 +3,7 @@ using Postgrest.Models;
 
 namespace Activity_Tracker
 {
+    [Table("activity_status")]
     public class ActivityStatus : BaseModel
     {
         [PrimaryKey("id", false)]
