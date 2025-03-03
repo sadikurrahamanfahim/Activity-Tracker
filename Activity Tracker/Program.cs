@@ -3,9 +3,8 @@ using System.Threading;
 using Supabase;
 using System.Threading.Tasks;
 using Postgrest.Attributes;
-using Websocket.Client.Logging;
+using Postgrest.Models;
 using Activity_Tracker;
-
 
 class Program
 {
@@ -13,13 +12,12 @@ class Program
     private static readonly string SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indxd2ViaGVua2t5YWhxZGNnaHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA0OTA0MDgsImV4cCI6MjA1NjA2NjQwOH0.HYZZbECOBEx_Qqck_XSKKCg2hNWKWnX4H9-nD1MDrHA";
     private static readonly Client supabase = new Client(SUPABASE_URL, SUPABASE_ANON_KEY);
     private static bool isRunning = true;
-    private static string userId = string.IsNullOrEmpty(Environment.UserName) ? "default_user" : Environment.UserName;
+    private static string userId = Environment.UserName ?? "default_user";
 
     static async Task Main(string[] args)
     {
         try
         {
-            // Attempt to initialize the Supabase client
             Console.WriteLine("Initializing Supabase client...");
             await supabase.InitializeAsync();
             Console.WriteLine("Supabase client initialized successfully.");
@@ -40,12 +38,9 @@ class Program
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Failed to connect to Supabase: {ex.Message} - {ex.StackTrace}");
-            if (ex.InnerException != null)
-            {
-                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
-            }
-            return; // Exit if connection fails
+            Console.WriteLine($"Failed to connect to Supabase: {ex.Message}");
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
     }
 
@@ -60,17 +55,11 @@ class Program
                 UserId = userId
             };
 
-            Console.WriteLine($"Attempting to upsert status: IsActive={status.IsActive}, LastActive={status.LastActive}, UserId={status.UserId}");
-            var response = await supabase.From<ActivityStatus>().Upsert(status);
-            Console.WriteLine("Status updated successfully. Response: " + (response != null ? response.ToString() : "Null response"));
+            await supabase.From<ActivityStatus>().Upsert(status);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error updating status: {ex.Message} - {ex.StackTrace}");
-            if (ex.InnerException != null)
-            {
-                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
-            }
+            Console.WriteLine($"Error updating status: {ex.Message}");
         }
     }
 
@@ -85,17 +74,11 @@ class Program
                 UserId = userId
             };
 
-            Console.WriteLine($"Attempting to update last active time: IsActive={status.IsActive}, LastActive={status.LastActive}, UserId={status.UserId}");
-            var response = await supabase.From<ActivityStatus>().Upsert(status);
-            Console.WriteLine("Last active time updated successfully. Response: " + (response != null ? response.ToString() : "Null response"));
+            await supabase.From<ActivityStatus>().Upsert(status);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error updating time: {ex.Message} - {ex.StackTrace}");
-            if (ex.InnerException != null)
-            {
-                Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
-            }
+            Console.WriteLine($"Error updating time: {ex.Message}");
         }
     }
 
@@ -103,10 +86,10 @@ class Program
     {
         try
         {
-            //var allRecords = await supabase.From<ActivityStatus>().Get();
-            //var response = allRecords.Models.FirstOrDefault(x => x.UserId == userId);
+            var responseList = await supabase.From<ActivityStatus>()
+                .Filter("user_id", Postgrest.Constants.Operator.Equals, userId)
+                .Get();
 
-            var responseList = await supabase.From<ActivityStatus>().Filter("user_id", Postgrest.Constants.Operator.Equals, userId).Get();
             var response = responseList.Models.FirstOrDefault();
 
             Console.Clear();
@@ -118,12 +101,12 @@ class Program
             }
             else
             {
-                Console.WriteLine("No status found for user: {userId}");
+                Console.WriteLine($"No status found for user: {userId}");
             }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error displaying status: {ex.Message} - {ex.StackTrace}");
+            Console.WriteLine($"Error displaying status: {ex.Message}");
         }
     }
 
