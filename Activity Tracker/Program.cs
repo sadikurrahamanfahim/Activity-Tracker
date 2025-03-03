@@ -103,8 +103,11 @@ class Program
     {
         try
         {
-            var allRecords = await supabase.From<ActivityStatus>().Get();
-            var response = allRecords.Models.FirstOrDefault(x => x.UserId == userId);
+            //var allRecords = await supabase.From<ActivityStatus>().Get();
+            //var response = allRecords.Models.FirstOrDefault(x => x.UserId == userId);
+
+            var responseList = await supabase.From<ActivityStatus>().Filter("user_id", Postgrest.Constants.Operator.Equals, userId).Get();
+            var response = responseList.Models.FirstOrDefault();
 
             Console.Clear();
             Console.WriteLine("Activity Status:");
