@@ -103,9 +103,8 @@ class Program
     {
         try
         {
-            var response = await supabase.From<ActivityStatus>()
-                .Where(x => x.UserId == userId)
-                .Single();
+            var allRecords = await supabase.From<ActivityStatus>().Get();
+            var response = allRecords.Models.FirstOrDefault(x => x.UserId == userId);
 
             Console.Clear();
             Console.WriteLine("Activity Status:");
