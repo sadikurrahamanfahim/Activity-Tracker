@@ -1,5 +1,7 @@
 # Activity Tracker
 
+![Activity Tracker Logo](https://raw.githubusercontent.com/sadikurrahamanfahim/Activity-Tracker/refs/heads/main/ActivityTracker.png)
+
 A simple console application built with C# and .NET that tracks your active status and last active time, storing the data in a Supabase online database. The app automatically starts when your computer boots up, sets your status to "active," and updates your last active time every minute. When you shut down your computer, it marks you as "inactive."
 
 ## Table of Contents
