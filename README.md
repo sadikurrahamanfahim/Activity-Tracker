@@ -29,23 +29,16 @@ A simple console application built with C# and .NET that tracks your active stat
 
 ## Installation
 1. **Download the App**:
-   - Download the `ActivityTracker.exe` file from the [Releases](https://github.com/sadikurrahamanfahim/Activity-Tracker/blob/main/Activity%20Tracker.exe) page.
+   - Download the `ActivityTracker.rar` file from the [Releases](https://github.com/sadikurrahamanfahim/Activity-Tracker/blob/main/Activity%20Tracker.rar) page.
+   - Extract and force run the exe file
 
 2. **Run the App**:
    - Double-click the `ActivityTracker.exe` file to launch the app.
    - The app will automatically add itself to your Windows Startup folder, so it runs every time your computer starts.
 
 3. **Verify It’s Working**:
-   - You should see a console window with messages like:
-- Initializing Supabase client...
-- Supabase client initialized successfully.
-- Activity Tracker Started
-- Press Ctrl+C to exit
-- Activity Status:
-- IsActive: True
-- LastActive: 3/3/2025 9:56:38 AM
-
-- The app will update your status and last active time every minute.
+   - You should see a window like image sown in the top.
+   - The app will update your status and last active time every minute.
 
 ## Usage
 - **Run the App**: Simply double-click `ActivityTracker.exe` to start tracking your activity.
