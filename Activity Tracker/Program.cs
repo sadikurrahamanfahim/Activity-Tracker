@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Postgrest.Attributes;
 using Postgrest.Models;
 using Activity_Tracker;
+using IWshRuntimeLibrary;
+using System.Diagnostics;
 
 class Program
 {
@@ -21,6 +23,8 @@ class Program
             Console.WriteLine("Initializing Supabase client...");
             await supabase.InitializeAsync();
             Console.WriteLine("Supabase client initialized successfully.");
+
+            AddtoStartUp.AddToStartup(); // add to startup
 
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
 

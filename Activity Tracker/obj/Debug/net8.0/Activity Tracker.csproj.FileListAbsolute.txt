@@ -31,3 +31,5 @@ D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Debug\net8.0\Websocke
 D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity Tracker.csproj.AssemblyReference.cache
 D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity.46503159.Up2Date
 D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity Tracker.sourcelink.json
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Interop.IWshRuntimeLibrary.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Debug\net8.0\Activity Tracker.csproj.ResolveComReference.cache
