@@ -1,0 +1,2 @@
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker.pdb
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker.exe

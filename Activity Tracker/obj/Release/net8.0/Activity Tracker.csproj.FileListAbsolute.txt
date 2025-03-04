@@ -1,0 +1,35 @@
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Activity Tracker.exe
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Activity Tracker.deps.json
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Activity Tracker.runtimeconfig.json
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Activity Tracker.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Activity Tracker.pdb
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.Functions.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.Gotrue.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\MimeMapping.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Newtonsoft.Json.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.Postgrest.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.Realtime.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.Core.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Supabase.Storage.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\System.Reactive.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\bin\Release\net8.0\Websocket.Client.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.csproj.AssemblyReference.cache
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Interop.IWshRuntimeLibrary.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.csproj.ResolveComReference.cache
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.AssemblyInfoInputs.cache
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.AssemblyInfo.cs
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.csproj.CoreCompileInputs.cache
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.sourcelink.json
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity.46503159.Up2Date
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\refint\Activity Tracker.dll
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.pdb
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\Activity Tracker.genruntimeconfig.cache
+D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker\obj\Release\net8.0\ref\Activity Tracker.dll
