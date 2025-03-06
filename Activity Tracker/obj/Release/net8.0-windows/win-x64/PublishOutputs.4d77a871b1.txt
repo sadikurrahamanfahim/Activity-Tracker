@@ -1,7 +1,0 @@
-D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker.pdb
-D:\_Dev_D\ConsoleApp\Activity Tracker\D3DCompiler_47_cor3.dll
-D:\_Dev_D\ConsoleApp\Activity Tracker\PenImc_cor3.dll
-D:\_Dev_D\ConsoleApp\Activity Tracker\PresentationNative_cor3.dll
-D:\_Dev_D\ConsoleApp\Activity Tracker\vcruntime140_cor3.dll
-D:\_Dev_D\ConsoleApp\Activity Tracker\wpfgfx_cor3.dll
-D:\_Dev_D\ConsoleApp\Activity Tracker\Activity Tracker.exe
